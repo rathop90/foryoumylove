@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Anuradha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset and Fullscreen Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Playfair Display', serif;
+            background-color: #f1e5e5;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 5rem;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        /* Keyframes Animation for Floating Text */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Love Quotes Styles */
+        .love-quote {
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+            margin-top: 40px;
+            color: #ff99cc;
+        }
+
+        /* Final Message Reveal */
+        .final-message {
+            display: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e40046;
+        }
+
+        /* Background Animation */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?romantic') no-repeat center center;
+            background-size: cover;
+            animation: fadeInBackground 35s ease-in-out forwards;
+        }
+
+        /* Background Fade-In */
+        @keyframes fadeInBackground {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Text Appear After 35 seconds */
+        .revealText {
+            opacity: 0;
+            animation: revealMessage 35s forwards;
+        }
+
+        @keyframes revealMessage {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Music Styling */
+        audio {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <h1 class="revealText">Anuradha...</h1>
+        <p class="revealText">This is for you, a little surprise full of love!</p>
+
+        <div class="love-quote">
+            <p class="revealText">"Love is not just a feeling, it's an adventure that I want to share with you."</p>
+        </div>
+        
+        <div class="final-message revealText">
+            <p>❤️ "Anuradha, I love you more than words can express." ❤️</p>
+        </div>
+
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        setTimeout(function() {
+            document.querySelector('.final-message').style.display = 'block';
+        }, 35000); // After 35 seconds, show the final message.
+    </script>
+</body>
+</html>
